@@ -1,0 +1,273 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const diagrams = [
+  {
+    id: 'd02',
+    title: 'Data Lineage',
+    description:
+      'Trace the movement and transformation of data through the platform.',
+    file: 'd02-data-lineage.svg',
+  },
+  {
+    id: 'd03',
+    title: 'Airflow Orchestration',
+    description:
+      'Explore the orchestration of the data processing pipeline.',
+    file: 'd03-airflow-orchestration.svg',
+  },
+  {
+    id: 'd04',
+    title: 'Historical Dimensional Model',
+    description:
+      'Examine dimensional modelling and historical attribute tracking.',
+    file: 'd04-historical-dimensional-model.svg',
+  },
+  {
+    id: 'd05',
+    title: 'Power BI Analytics',
+    description:
+      'Understand how curated data supports analytical reporting.',
+    file: 'd05-powerbi-analytics.svg',
+  },
+];
+
+const imageBase = '/images/projects/fmdx-aws';
+
+const technologies = [
+  'AWS S3',
+  'AWS Glue',
+  'PySpark',
+  'Apache Airflow',
+  'AWS Athena',
+  'SQL',
+  'Dimensional Modelling',
+  'Power BI',
+];
+---
+
+<BaseLayout
+  title="FMDX AWS Data Platform | Professional Portfolio"
+  description="FMDX AWS data engineering platform showcasing medallion architecture, Glue and PySpark ETL, Airflow orchestration, SCD Type 2 and Power BI analytics."
+>
+  <section class="showcase-hero">
+    <div class="container">
+      <a class="back-link" href="/#projects">← Back to Projects</a>
+
+      <p class="eyebrow">Featured Project / Data Engineering</p>
+
+      <h1>FMDX — AWS Data Platform</h1>
+
+      <p class="showcase-intro">
+        An AWS-based data engineering platform integrating ingestion,
+        transformation, orchestration, historical dimensional modelling
+        and analytics.
+      </p>
+
+      <div class="tags">
+        {technologies.map((technology) => (
+          <span class="tag">{technology}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">01 / Overview</span>
+        <h2>Project Overview</h2>
+      </div>
+
+      <p class="body-copy">
+        FMDX demonstrates the design and implementation of a cloud-based
+        financial market data platform using AWS services and modern
+        data engineering practices.
+      </p>
+
+      <p class="body-copy">
+        The solution organises ingestion, cleansing, historical modelling,
+        curated analytical datasets and reporting into a structured
+        end-to-end architecture.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="architecture">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">02 / Architecture</span>
+        <h2>Platform Architecture</h2>
+        <p>
+          The end-to-end design connects data ingestion, AWS S3 storage,
+          Glue transformations, orchestration and analytical consumption.
+        </p>
+      </div>
+
+      <figure class="diagram-panel">
+        <a
+          href={`${imageBase}/d01-platform-architecture.svg`}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open full-size platform architecture diagram"
+        >
+          <img
+            src={`${imageBase}/d01-platform-architecture.svg`}
+            alt="FMDX AWS platform architecture diagram"
+            loading="lazy"
+          />
+        </a>
+
+        <figcaption>
+          D01 — Platform Architecture.
+          <a
+            href={`${imageBase}/d01-platform-architecture.svg`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open full-size diagram ↗
+          </a>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="engineering">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">03 / Engineering</span>
+        <h2>Engineering Highlights</h2>
+        <p>
+          Selected architectural and engineering capabilities demonstrated
+          across the platform.
+        </p>
+      </div>
+
+      <div class="highlight-grid">
+        <article class="highlight-card">
+          <h3>Medallion Architecture</h3>
+          <p>
+            Layered data processing through landing, Bronze, Silver and
+            Gold datasets, supporting progressively refined data quality
+            and analytical readiness.
+          </p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>ETL & Transformation</h3>
+          <p>
+            AWS Glue and PySpark pipelines implement data ingestion,
+            cleansing, transformation and curated data preparation.
+          </p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>Pipeline Orchestration</h3>
+          <p>
+            Apache Airflow coordinates the processing workflow and
+            dependencies between data engineering stages.
+          </p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>Historical Data Modelling</h3>
+          <p>
+            Slowly Changing Dimension Type 2 techniques preserve
+            historical attribute changes for dimensional analytics.
+          </p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>Data Quality</h3>
+          <p>
+            Validation and reconciliation controls support reliable
+            transformations and trustworthy analytical datasets.
+          </p>
+        </article>
+
+        <article class="highlight-card">
+          <h3>Analytics & Reporting</h3>
+          <p>
+            AWS Athena and Power BI enable analytical exploration,
+            dimensional reporting and operational visibility.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="diagrams">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">04 / Technical Design</span>
+        <h2>Architecture & Data Flow</h2>
+        <p>
+          Explore the supporting architecture, lineage, orchestration,
+          dimensional modelling and analytics diagrams.
+        </p>
+      </div>
+
+      <div class="diagram-grid">
+        {diagrams.map((diagram) => (
+          <article class="diagram-card">
+            <a
+              href={`${imageBase}/${diagram.file}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open full-size ${diagram.title} diagram`}
+            >
+              <img
+                src={`${imageBase}/${diagram.file}`}
+                alt={`FMDX ${diagram.title} diagram`}
+                loading="lazy"
+              />
+            </a>
+
+            <div class="diagram-card-content">
+              <span class="eyebrow">{diagram.id.toUpperCase()}</span>
+              <h3>{diagram.title}</h3>
+              <p>{diagram.description}</p>
+
+              <a
+                class="diagram-link"
+                href={`${imageBase}/${diagram.file}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open full-size diagram ↗
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">05 / Technology</span>
+        <h2>Technology Stack</h2>
+        <p>
+          Technologies used across data ingestion, transformation,
+          orchestration, modelling and analytics.
+        </p>
+      </div>
+
+      <div class="tags">
+        {technologies.map((technology) => (
+          <span class="tag">{technology}</span>
+        ))}
+      </div>
+
+      <p class="body-copy">
+        This showcase uses selected architecture and design material.
+        The underlying engineering repository is maintained privately.
+      </p>
+
+      <a class="return-link" href="/#projects">
+        ← Return to Featured Projects
+      </a>
+    </div>
+  </section>
+</BaseLayout>

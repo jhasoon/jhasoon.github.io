@@ -1,0 +1,48 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  technologies: string[];
+  category: string;
+  href?: string;
+}
+
+const { title, description, technologies, category, href } = Astro.props;
+---
+
+<article class="project-card">
+  <div class="project-visual">
+    <strong>FMDX</strong>
+    <p>Cloud Data Platform Architecture</p>
+
+    <div class="pipeline" aria-label="Data pipeline stages">
+      <span>Ingestion</span>
+      <span>Transformation</span>
+      <span>Analytics</span>
+    </div>
+  </div>
+
+  <div class="project-content">
+    <span class="eyebrow">{category}</span>
+    <h3>{title}</h3>
+    <p>{description}</p>
+
+    <div class="tags" aria-label="Technologies">
+      {technologies.map((technology) => (
+        <span class="tag">{technology}</span>
+      ))}
+    </div>
+
+    {
+      href ? (
+        <a class="project-link" href={href}>
+          View Project Showcase →
+        </a>
+      ) : (
+        <span class="project-status">
+          Project showcase coming soon
+        </span>
+      )
+    }
+  </div>
+</article>

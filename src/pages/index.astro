@@ -1,16 +1,122 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const featuredProject = {
+  href: '/projects/fmdx-aws/',
+  title: 'FMDX — AWS Glue Athena Airflow Data Platform',
+  category: 'Featured Data Engineering Project',
+  description:
+    'An AWS-based data engineering platform demonstrating medallion architecture, orchestrated ETL pipelines, historical dimensional modelling, data quality controls, and analytical consumption through Athena and Power BI.',
+  technologies: [
+    'AWS S3',
+    'AWS Glue',
+    'PySpark',
+    'Apache Airflow',
+    'Athena',
+    'SQL',
+    'Power BI',
+  ],
+};
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="Professional Portfolio | Data Engineering, Cloud & Analytics"
+  description="A professional portfolio showcasing data engineering, cloud analytics, AI/ML and software development projects."
+>
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">Data Engineering · Cloud · Analytics · AI/ML</span>
+
+      <h1>
+        Engineering data platforms.<br />
+        <span>Turning data into insight.</span>
+      </h1>
+
+      <p class="hero-description">
+        Exploring the design and implementation of modern data platforms,
+        scalable pipelines, analytical systems and intelligent applications.
+        Showcasing architecture, engineering decisions and practical outcomes.
+      </p>
+
+      <div class="actions">
+        <a class="button button-primary" href="#projects">
+          Explore Projects →
+        </a>
+        <a class="button button-secondary" href="#about">
+          About This Portfolio
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Selected Work</span>
+        <h2>Featured Projects</h2>
+        <p>
+          Engineering projects spanning cloud data platforms,
+          analytics and modern software development.
+        </p>
+      </div>
+
+      <ProjectCard {...featuredProject} />
+    </div>
+  </section>
+
+  <section class="section section-alt" id="about">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">About</span>
+        <h2>Architecture, engineering and delivery</h2>
+      </div>
+
+      <p class="body-copy">
+        This portfolio presents selected technical projects with an emphasis
+        on system architecture, implementation decisions, data modelling,
+        operational reliability and analytical outcomes.
+      </p>
+
+      <p class="body-copy">
+        Each showcase is designed to communicate not only the technologies
+        involved, but also the engineering considerations behind the solution.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Technical Capabilities</span>
+        <h2>Technology & Engineering Focus</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>Data Engineering</h3>
+          <p>
+            Python, SQL, PySpark, ETL/ELT, data modelling,
+            dimensional warehousing and data quality.
+          </p>
+        </div>
+
+        <div class="skill-group">
+          <h3>Cloud & Platforms</h3>
+          <p>
+            AWS S3, Glue, Athena, Apache Airflow,
+            Databricks, Delta Lake and dbt.
+          </p>
+        </div>
+
+        <div class="skill-group">
+          <h3>Analytics & Software</h3>
+          <p>
+            Power BI, analytical SQL, Git, CI/CD,
+            Python development and AI/ML integration.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
