@@ -1,43 +1,67 @@
-# Astro Starter Kit: Minimal
+# Professional Portfolio
 
-```sh
-npm create astro@latest -- --template minimal
+A public portfolio showcasing selected data engineering, cloud, analytics, and software projects, with an emphasis on architecture, engineering decisions, implementation, and practical outcomes.
+
+**Live site:** https://jhasoon.github.io/
+
+**Featured project:** https://jhasoon.github.io/projects/fmdx-aws/
+
+## What this repository contains
+
+This repository contains the **Astro source code** for the portfolio website, its styling and reusable components, and approved public showcase assets such as architecture diagrams. GitHub Actions builds and deploys the site to GitHub Pages.
+
+Engineering implementations, datasets, and detailed project documentation are maintained in **separate private repositories**. Only selected, reviewed material is published here.
+
+## Technology
+
+- **Astro:** Static website generation and component-based pages
+- **HTML and CSS:** Responsive presentation and styling
+- **Node.js and npm:** Local development and reproducible builds
+- **Git and GitHub:** Source control and collaboration history
+- **GitHub Actions:** Automated build and deployment
+- **GitHub Pages:** Public static website hosting
+- **SVG:** Scalable architecture and data-flow diagrams
+
+Astro was selected to provide a lightweight, maintainable static website without requiring a continuously running application server.
+
+## Featured work
+
+### FMDX — AWS Data Platform
+
+A cloud data engineering showcase covering ingestion, medallion data processing, orchestration, historical dimensional modelling, data quality, and analytical consumption through AWS Athena and Power BI.
+
+[Explore the FMDX AWS showcase](https://jhasoon.github.io/projects/fmdx-aws/)
+
+## Local development
+
+Requires a compatible Node.js version and npm.
+
+```bash
+npm ci
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+To validate the production build:
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+npm run build
+npm run preview
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Deployment
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+A push to the `main` branch triggers the workflow at `.github/workflows/deploy.yml`, which builds the Astro site and publishes the generated `dist/` directory to GitHub Pages.
 
-Any static assets, like images, can be placed in the `public/` directory.
+```bash
+npm run build
+git status
+git add <reviewed-files>
+git commit -m "Describe change"
+git push origin main
+```
 
-## 🧞 Commands
+Review changes before committing or publishing. The published site is publicly accessible.
 
-All commands are run from the root of the project, from a terminal:
+## Project scope
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+This is a presentation repository, **not** a mirror of the underlying engineering project repositories. The portfolio evolves as additional projects become ready for public demonstration.
